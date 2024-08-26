@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "502623627678",
+    "project_id": "firbase-flutter112",
+    "storage_bucket": "firbase-flutter112.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502623627678:android:0ad8a993f8ab38854b0e8f",
+        "android_client_info": {
+          "package_name": "com.example.firebaseproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcFYlgq4MvP2L75pR7TnvW1KIyONNrjus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
