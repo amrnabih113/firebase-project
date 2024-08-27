@@ -6,15 +6,15 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-await Firebase.initializeApp(
-  options: FirebaseOptions(
-    apiKey: 'key',
-    appId: 'id',
-    messagingSenderId: 'sendid',
-    projectId: 'myapp',
-    storageBucket: 'myapp-b9yt18.appspot.com',
-  )
-);
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: 'AIzaSyAcFYlgq4MvP2L75pR7TnvW1KIyONNrjus',
+      appId: '1:502623627678:android:0ad8a993f8ab38854b0e8f',
+      messagingSenderId: '502623627678',
+      projectId: 'firbase-flutter112',
+      storageBucket: 'firbase-flutter112.appspot.com',
+    ),
+  );
   runApp(const MyApp());
 }
 
@@ -41,8 +41,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Login(),
-      routes: {"homepage": (context) => const Homepage()},
+      home: FirebaseAuth.instance.currentUser == null
+          ? const Login()
+          : const Homepage(),
+      routes: {
+        "homepage": (context) => const Homepage(),
+        "login": (context) => const Login()
+      },
     );
   }
 }
