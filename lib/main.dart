@@ -41,6 +41,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+    
+      debugShowCheckedModeBanner: false,
       home: FirebaseAuth.instance.currentUser == null
           ? const Login()
           : const Homepage(),

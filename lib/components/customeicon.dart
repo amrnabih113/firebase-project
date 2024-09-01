@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Customeicon extends StatelessWidget {
-  Customeicon({super.key, required this.imageurl});
+  Customeicon({super.key, required this.imageurl, this.onTap});
   String imageurl;
+  void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         width: 100,
         color: const Color(0xff222b31),
