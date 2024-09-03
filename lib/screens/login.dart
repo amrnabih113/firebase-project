@@ -5,7 +5,7 @@ import 'package:firebaseproject/components/custombutton2.dart';
 import 'package:firebaseproject/components/customebutton.dart';
 import 'package:firebaseproject/components/customeicon.dart';
 import 'package:firebaseproject/components/custometextfield.dart'; // Ensure this import is correct
-import 'package:firebaseproject/signup.dart';
+import 'package:firebaseproject/screens/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebaseproject/homepage.dart';
-import 'package:firebaseproject/login.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebaseproject/screens/homepage.dart';
+import 'package:firebaseproject/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -26,6 +27,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  void gettoken() async {
+    String? mytoken = await FirebaseMessaging.instance.getToken();
+    print(mytoken);
+  }
+
   @override
   void initState() {
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
@@ -35,13 +41,13 @@ class _MyAppState extends State<MyApp> {
         print('User is signed in!');
       }
     });
+    gettoken();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    
       debugShowCheckedModeBanner: false,
       home: FirebaseAuth.instance.currentUser == null
           ? const Login()

@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebaseproject/components/customebutton.dart';
 import 'package:firebaseproject/components/customeicon.dart';
 import 'package:firebaseproject/components/custometextfield.dart';
-import 'package:firebaseproject/login.dart';
+import 'package:firebaseproject/screens/login.dart';
 import 'package:flutter/material.dart';
 
 class Signup extends StatefulWidget {

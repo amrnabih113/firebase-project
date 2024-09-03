@@ -1,8 +1,7 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebaseproject/components/mylisttile.dart';
-import 'package:firebaseproject/profile.dart';
+
+import 'package:firebaseproject/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -20,14 +19,17 @@ class Mydrawer extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const CircleAvatar(
-                  backgroundImage: AssetImage("images/avatar.webp"),
+                CircleAvatar(
+                  backgroundImage: currentUser!.photoURL != null
+                      ? NetworkImage(currentUser!.photoURL!)
+                      : const AssetImage("images/avatar.webp") as ImageProvider,
                   minRadius: 25,
                 ),
                 Column(
                   children: [
                     Text(currentUser!.displayName ?? "",
-                        style: TextStyle(color: Colors.white, fontSize: 18)),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 18)),
                     const SizedBox(
                       height: 10,
                     ),
